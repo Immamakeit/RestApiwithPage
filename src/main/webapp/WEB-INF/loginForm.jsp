@@ -8,6 +8,7 @@
 </head>
 <body>
    <form method="post" action="/check/login">
+   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     <input type="text" name="username" id="username"/><br>
     <input type="password" name="password" id="password"/><br>
     <button>로그인</button>
