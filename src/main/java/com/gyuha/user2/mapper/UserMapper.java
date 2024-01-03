@@ -13,5 +13,4 @@ public interface UserMapper {
 
     int deleteUser(String username);
 
-    boolean checkPassword(UserVo userVo);
 }

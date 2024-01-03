@@ -42,8 +42,8 @@ public class UserController {
     public CommonRespDto checkPassword(@RequestBody CheckPasswordReqDto checkPasswordReqDto) {
         CommonRespDto commonRespDto = new CommonRespDto();
         try {
-            UserVo userVo = new UserVo(checkPasswordReqDto);
-            if (!userService.isPasswordValid(userVo)) {
+            //UserVo userVo = new UserVo(checkPasswordReqDto);
+            if (!userService.isPasswordValid(checkPasswordReqDto.getUsername(), checkPasswordReqDto.getPassword())) {
                 commonRespDto.setCode(ResultCode.INVALID_PASSWORD.value());
                 commonRespDto.setMessage("Password is Invalid");
             }

@@ -16,17 +16,17 @@ public class ViewController {
     private UserService userService;
 
     @GetMapping("/customError")
-    public String errorPage(){
+    public String errorPage() {
         return "errors/customError";
     }
 
     @GetMapping("/")
-    public String usersWelcome(){
+    public String usersWelcome() {
         return "views/welcome";
     }
 
     @GetMapping("/user/detail")
-    public String userDetail(Model model){
+    public String userDetail(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
         UserVo user = userService.getUserInfo(username);
@@ -35,17 +35,17 @@ public class ViewController {
     }
 
     @GetMapping("/user/login")
-    public String loginForm(){
+    public String loginForm() {
         return "views/loginForm";
     }
 
     @GetMapping("/user/register")
-    public String userRegister(){
+    public String userRegister() {
         return "views/userRegister";
     }
 
     @GetMapping("/user/update")
-    public String userUpdate(Model model){
+    public String userUpdate(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
         UserVo user = userService.getUserInfo(username);
@@ -54,7 +54,7 @@ public class ViewController {
     }
 
     @GetMapping("/user/delete")
-    public String userDelete(){
+    public String userDelete() {
         return "views/userDelete";
     }
 

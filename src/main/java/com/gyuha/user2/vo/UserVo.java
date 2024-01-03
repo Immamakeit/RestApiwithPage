@@ -33,6 +33,7 @@ public class UserVo {
     }
 
     public UserVo(UpdateUserReqDto updateUserReqDto) {
+        this.id = updateUserReqDto.getId();
         this.name = updateUserReqDto.getName();
         this.username = updateUserReqDto.getUsername();
         this.password = updateUserReqDto.getPassword();

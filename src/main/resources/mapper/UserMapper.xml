@@ -8,13 +8,6 @@
         WHERE username = #{username}
     </select>
 
-    <select id="checkPassword" resultType="boolean">
-        SELECT COUNT(*) > 0
-        FROM User
-        WHERE username = #{username}
-          AND password = #{password}
-    </select>
-
     <insert id="insertUser">
         INSERT INTO User (name, username, password, email, address, phone, website, company)
         VALUES (#{name}, #{username}, #{password}, #{email}, #{address}, #{phone}, #{website}, #{company})

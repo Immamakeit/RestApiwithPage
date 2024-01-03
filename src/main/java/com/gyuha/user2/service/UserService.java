@@ -1,5 +1,6 @@
 package com.gyuha.user2.service;
 
+import com.gyuha.user2.config.security.CustomUserDetailService;
 import com.gyuha.user2.exception.DataNotFoundException;
 import com.gyuha.user2.mapper.UserMapper;
 import com.gyuha.user2.vo.UserVo;
@@ -16,6 +17,9 @@ public class UserService {
     private UserMapper userMapper;
 
     @Autowired
+    private CustomUserDetailService customUserDetailService;
+
+    @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
     public UserVo getUserInfo(String username) {
@@ -29,24 +33,15 @@ public class UserService {
     }
 
     public void updateUser(UserVo userVo) throws DataIntegrityViolationException {
-//        String encodedPassword = passwordEncoder.encode(userVo.getPassword());
-//        userVo.setPassword(encodedPassword);
         if (userMapper.updateUser(userVo) == 0) {
             throw new DataNotFoundException("update failed since No such user exists " + userVo.getUsername());
         }
     }
 
-    public boolean isPasswordValid(UserVo userVo) {
-        String encodedPassword = passwordEncoder.encode(userVo.getPassword());
-        userVo.setPassword(encodedPassword);
-        return userMapper.checkPassword(userVo);
+    public boolean isPasswordValid(String username, String password) {
+        UserDetails userDetails = customUserDetailService.loadUserByUsername(username);
+        return passwordEncoder.matches(password, userDetails.getPassword());
     }
-
-//    public boolean isPasswordValid(String username, String password) {
-//        UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
-//        return passwordEncoder.matches(password, userDetails.getPassword());
-//    }
-
 
 }
 

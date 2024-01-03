@@ -12,6 +12,7 @@
                 event.preventDefault();
 
                 var userData = {
+                    id: $("#id").val(),
                     name: $("#name").val(),
                     username: $("#username").val(),
                     password: $("#password").val(),
@@ -82,6 +83,7 @@
 </head>
 <body>
  <form id="updateForm">
+        <input type="hidden" name="id" id="id" value="${user.id}"/>
         이름 : <input type="text" name="name" id="name" value="${user.name}">
         <br><br>
         닉네임 : <input type="text" name="username" id="username" value="${user.username}">
