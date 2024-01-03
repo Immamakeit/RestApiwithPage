@@ -22,7 +22,7 @@ public class CustomUserDetailService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserVo user = userMapper.getUserInfo(username);
         if (user == null) {
-            throw new UsernameNotFoundException("No such User");
+            throw new UsernameNotFoundException("No such User From CustomUserDetailService.loadUserByUsername");
         }
 
         return User.builder()

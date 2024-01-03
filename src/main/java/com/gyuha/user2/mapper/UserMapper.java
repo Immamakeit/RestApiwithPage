@@ -11,6 +11,6 @@ public interface UserMapper {
 
     int updateUser(UserVo userVo);
 
-    int deleteUser(String username);
+    int deleteUser(UserVo userVo);
 
 }

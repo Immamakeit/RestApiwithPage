@@ -2,10 +2,7 @@ package com.gyuha.user2.controller;
 
 import com.gyuha.user2.consts.ResultCode;
 import com.gyuha.user2.dto.CommonRespDto;
-import com.gyuha.user2.dto.user.CheckPasswordReqDto;
-import com.gyuha.user2.dto.user.CreateUserReqDto;
-import com.gyuha.user2.dto.user.GetUserRespDto;
-import com.gyuha.user2.dto.user.UpdateUserReqDto;
+import com.gyuha.user2.dto.user.*;
 import com.gyuha.user2.exception.DataNotFoundException;
 import com.gyuha.user2.service.UserService;
 import com.gyuha.user2.vo.UserVo;
@@ -98,14 +95,23 @@ public class UserController {
         }
     }
 
-//    @PostMapping("/user/delete")
-//    public CommonRespDto deleteUser(@RequestBody UserVo userVo) {
-//        CommonRespDto commonRespDto = new CommonRespDto();
-//        try {
-//            return commonRespDto;
-//        } catch (Exception e) {
-//            return commonRespDto;
-//        }
-//    }
+    @PostMapping("/user/delete")
+    public CommonRespDto deleteUser(@RequestBody DeleteUserReqDto deleteUserReqDto) {
+        CommonRespDto commonRespDto = new CommonRespDto();
+        try {
+            UserVo userVo = new UserVo(deleteUserReqDto);
+            userService.deleteUser(userVo);
+            return commonRespDto;
+        } catch (DataNotFoundException e) {
+            commonRespDto.setCode(ResultCode.DATA_NOT_FOUND.value());
+            commonRespDto.setMessage(e.getLocalizedMessage());
+            return commonRespDto;
+        } catch (Exception e) {
+            log.error("Error at UserController.deleteUser", e);
+            commonRespDto.setCode(ResultCode.UNKNOWN_EXCEPTION.value());
+            commonRespDto.setMessage("Error occured while deleting user");
+            return commonRespDto;
+        }
+    }
 
 }

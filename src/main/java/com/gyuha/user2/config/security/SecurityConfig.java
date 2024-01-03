@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 
 
 @Configuration
@@ -24,10 +25,12 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        HttpSessionRequestCache requestCache = new HttpSessionRequestCache();
+        requestCache.setMatchingRequestParameterName(null);
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/user/detail").authenticated()
+                        .requestMatchers("/user/detail", "/user/delete", "/user/update").authenticated()
                         .anyRequest().permitAll()
                 )
                 .formLogin(form -> form
@@ -36,8 +39,12 @@ public class SecurityConfig {
                         .defaultSuccessUrl("/user/detail")
                         .permitAll()
                 )
-                .logout(Customizer.withDefaults());
-        return http.build();
+                .logout(logout -> logout
+                        .logoutSuccessUrl("/")
+                        .permitAll()
+                );
+
+        return http.getOrBuild();
     }
 
     @Autowired

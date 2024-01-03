@@ -54,7 +54,11 @@ public class ViewController {
     }
 
     @GetMapping("/user/delete")
-    public String userDelete() {
+    public String userDelete(Model model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        UserVo user = userService.getUserInfo(username);
+        model.addAttribute("user", user);
         return "views/userDelete";
     }
 

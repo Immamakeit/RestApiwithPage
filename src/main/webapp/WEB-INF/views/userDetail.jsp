@@ -3,8 +3,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Detail</title>
+<meta charset="UTF-8">
+<title>유저상세</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+        $(document).ready(function() {
+            $("#logoutBtn").click(function() {
+                var isConfirmed = confirm("정말 로그아웃 하시겠습니까?");
+                if(isConfirmed) {
+                    window.location.href = "/logout";
+                }
+            });
+        });
+</script>
 </head>
 <body>
     <h2>사용자 상세 정보</h2>
@@ -41,6 +52,8 @@
 
     <a href="/user/update">수정</a>
     <br>
-    <a href="/user/delete">삭제</a>
+    <a href="/user/delete">탈퇴</a>
+    <br>
+    <button type="button" id="logoutBtn">로그아웃</a>
 </body>
 </html>

@@ -38,6 +38,12 @@ public class UserService {
         }
     }
 
+    public void deleteUser(UserVo userVo) {
+        if (userMapper.deleteUser(userVo) == 0) {
+            throw new DataNotFoundException("delete failed since No such user exists " + userVo.getId());
+        }
+    }
+
     public boolean isPasswordValid(String username, String password) {
         UserDetails userDetails = customUserDetailService.loadUserByUsername(username);
         return passwordEncoder.matches(password, userDetails.getPassword());

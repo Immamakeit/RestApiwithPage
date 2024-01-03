@@ -3,6 +3,7 @@ package com.gyuha.user2.vo;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.gyuha.user2.dto.user.CheckPasswordReqDto;
 import com.gyuha.user2.dto.user.CreateUserReqDto;
+import com.gyuha.user2.dto.user.DeleteUserReqDto;
 import com.gyuha.user2.dto.user.UpdateUserReqDto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -46,6 +47,10 @@ public class UserVo {
     public UserVo(CheckPasswordReqDto checkPasswordReqDto) {
         this.username = checkPasswordReqDto.getUsername();
         this.password = checkPasswordReqDto.getPassword();
+    }
+
+    public UserVo(DeleteUserReqDto deleteUserReqDto) {
+        this.id = deleteUserReqDto.getId();
     }
 
 }
