@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gyuha.user2.mapper.UserMapper">
+
+    <select id="getUserInfo" resultType="com.gyuha.user2.vo.UserVo">
+        SELECT *
+        FROM User
+        WHERE username = #{username}
+    </select>
+
+    <select id="checkPassword" resultType="boolean">
+        SELECT COUNT(*) > 0
+        FROM User
+        WHERE username = #{username}
+          AND password = #{password}
+    </select>
+
+    <insert id="insertUser">
+        INSERT INTO User (name, username, password, email, address, phone, website, company)
+        VALUES (#{name}, #{username}, #{password}, #{email}, #{address}, #{phone}, #{website}, #{company})
+    </insert>
+
+    <update id="updateUser">
+        UPDATE User
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="username != null">
+                username = #{username},
+            </if>
+            <if test="email != null">
+                email = #{email},
+            </if>
+            <if test="address != null">
+                address = #{address},
+            </if>
+            <if test="phone != null">
+                phone = #{phone},
+            </if>
+            <if test="website != null">
+                website = #{website},
+            </if>
+            <if test="company != null">
+                company = #{company}
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteUser">
+        DELETE FROM User
+        WHERE id = #{id}
+    </delete>
+
+</mapper>
