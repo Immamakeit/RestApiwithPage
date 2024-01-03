@@ -3,7 +3,6 @@ package com.gyuha.user2.config.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -21,6 +20,9 @@ public class SecurityConfig {
     private CustomUserDetailService customUserDetailService;
 
     @Autowired
+    private CustomLoginFailure customLoginFailure;
+
+    @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
     @Bean
@@ -28,6 +30,8 @@ public class SecurityConfig {
         HttpSessionRequestCache requestCache = new HttpSessionRequestCache();
         requestCache.setMatchingRequestParameterName(null);
         http
+                .requestCache((cache) -> cache
+                        .requestCache(requestCache))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/user/detail", "/user/delete", "/user/update").authenticated()
@@ -36,6 +40,7 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginPage("/user/login")
                         .loginProcessingUrl("/login")
+                        .failureHandler(customLoginFailure)
                         .defaultSuccessUrl("/user/detail")
                         .permitAll()
                 )
@@ -44,7 +49,7 @@ public class SecurityConfig {
                         .permitAll()
                 );
 
-        return http.getOrBuild();
+        return http.build();
     }
 
     @Autowired

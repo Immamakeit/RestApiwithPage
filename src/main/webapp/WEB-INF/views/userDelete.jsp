@@ -70,7 +70,7 @@
                         success: function(response) {
                             switch(response.code) {
                                case 0:
-                                   alert("삭제 성공");
+                                   alert("탈퇴 확인");
                                    window.location.href = "/";
                                    break;
                                case -1:

@@ -3,8 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>login</title>
+<meta charset="UTF-8">
+<title>login</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+    });
+</script>
 </head>
 <body>
    <form method="post" action="/login">
