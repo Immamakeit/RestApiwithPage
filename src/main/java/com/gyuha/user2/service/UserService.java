@@ -44,9 +44,13 @@ public class UserService {
         }
     }
 
-    public boolean isPasswordValid(String username, String password) {
-        UserDetails userDetails = customUserDetailService.loadUserByUsername(username);
-        return passwordEncoder.matches(password, userDetails.getPassword());
+    public boolean isPasswordValid(UserVo userVo) {
+        UserDetails userDetails = customUserDetailService.loadUserByUsername(userVo.getUsername());
+        return passwordEncoder.matches(userVo.getPassword(), userDetails.getPassword());
+    }
+
+    public boolean isEmailDuplicate(UserVo userVo) {
+        return userMapper.isEmailDuplicate(userVo);
     }
 
 }

@@ -1,10 +1,7 @@
 package com.gyuha.user2.vo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.gyuha.user2.dto.user.CheckPasswordReqDto;
-import com.gyuha.user2.dto.user.CreateUserReqDto;
-import com.gyuha.user2.dto.user.DeleteUserReqDto;
-import com.gyuha.user2.dto.user.UpdateUserReqDto;
+import com.gyuha.user2.dto.user.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -36,7 +33,6 @@ public class UserVo {
     public UserVo(UpdateUserReqDto updateUserReqDto) {
         this.id = updateUserReqDto.getId();
         this.name = updateUserReqDto.getName();
-        this.username = updateUserReqDto.getUsername();
         this.password = updateUserReqDto.getPassword();
         this.email = updateUserReqDto.getEmail();
         this.address = updateUserReqDto.getAddress();
@@ -51,6 +47,10 @@ public class UserVo {
 
     public UserVo(DeleteUserReqDto deleteUserReqDto) {
         this.id = deleteUserReqDto.getId();
+    }
+
+    public UserVo(CheckDuplicateEmailReqDto checkDuplicateEmailReqDto) {
+        this.email= checkDuplicateEmailReqDto.getEmail();
     }
 
 }

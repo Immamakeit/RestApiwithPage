@@ -19,9 +19,6 @@
             <if test="name != null">
                 name = #{name},
             </if>
-            <if test="username != null">
-                username = #{username},
-            </if>
             <if test="email != null">
                 email = #{email},
             </if>
@@ -45,5 +42,11 @@
         DELETE FROM User
         WHERE id = #{id}
     </delete>
+
+    <select id="isEmailDuplicate" resultType="boolean">
+        SELECT COUNT(*) > 0
+        FROM User
+        WHERE email = #{email}
+    </select>
 
 </mapper>

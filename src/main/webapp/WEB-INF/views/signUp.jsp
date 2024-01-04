@@ -111,8 +111,8 @@
                             <td><input type="text" name="name" id="name" class="form-control"/></td>
                         </tr>
                         <tr>
-                            <th>닉네임</th>
-                            <td><input type="text" name="username" id="username" class="form-control" required/></td>
+                            <th>유저네임</th>
+                            <td><input type="text" name="username" id="username" class="form-control" placeholder="추후에 변경하실 수 없습니다." required/></td>
                         </tr>
                         <tr>
                             <th>비밀번호</th>

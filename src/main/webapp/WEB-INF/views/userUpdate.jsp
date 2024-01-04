@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +6,7 @@
 <title>수정</title>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
     body {
         background-color: #f5f5f5;
@@ -20,43 +20,97 @@
         background-color: #fff;
         padding: 20px;
         border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     .form-container input[type="text"],
     .form-container input[type="password"] {
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
     }
     .form-container button {
         width: 100%;
+        padding: 10px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
     }
     .error-message {
         color: red;
         margin-top: 10px;
+        text-align: left;
     }
     .form-group label {
         text-align: left;
         display: block;
+        font-weight: bold;
     }
 </style>
 <script>
-    $(document).ready(function() {
-        $("#updateBtn").click(function() {
-            event.preventDefault();
+   $(document).ready(function() {
+       const originalEmail = $("#email").val();
 
-            var userData = {
-                id: $("#id").val(),
-                name: $("#name").val(),
-                username: $("#username").val(),
-                password: $("#password").val(),
-                email: $("#email").val(),
-                address: $("#address").val(),
-                phone: $("#phone").val(),
-                website: $("#website").val(),
-                company: $("#company").val()
-            };
-                checkPasswordAndUpdate(userData);
-        });
-    });
+       $("#updateBtn").click(function(event) {
+           event.preventDefault();
+           var userData = gatherUserData();
+
+           if (userData.email !== originalEmail) {
+               checkDuplicateEmail(userData.email, function() {
+                   checkPasswordAndUpdate(userData);
+               });
+           } else {
+               checkPasswordAndUpdate(userData);
+           }
+       });
+
+   });
+
+    function gatherUserData() {
+       return {
+           id: $("#id").val(),
+           name: $("#name").val(),
+           username: $("#username").val(),
+           password: $("#password").val(),
+           email: $("#email").val(),
+           address: $("#address").val(),
+           phone: $("#phone").val(),
+           website: $("#website").val(),
+           company: $("#company").val()
+       };
+    }
+
+    function checkDuplicateEmail(email, callback) {
+           $.ajax({
+               url: '/api/check/duplicate/email',
+               type: 'POST',
+               contentType: 'application/json',
+               data: JSON.stringify({ email: email }),
+               success: function(response) {
+                    switch(response.code) {
+                       case 0:
+                           callback();
+                           break;
+                       case -2:
+                           Swal.fire({
+                               icon: 'warning',
+                               title: '이메일 중복',
+                               text: '이미 사용중인 이메일 입니다.'
+                           });
+                           break;
+                       default:
+                           console.error("중복 이메일 검사 중 오류 발생:");
+                   }
+               },
+               error: function(xhr, status, error) {
+                   console.error("중복 이메일 검사 오류:", error);
+               }
+           });
+    }
 
     function checkPasswordAndUpdate(userData) {
         $.ajax({
@@ -66,28 +120,52 @@
             data: JSON.stringify({username: userData.username, password: userData.password}),
             success: function(response) {
                 switch(response.code) {
-                        case 0:
-                            updateUser(userData);
-                            break;
-                        case -1:
-                            alert("수정 하고자 하는 유저가 존재하지 않습니다.");
+                    case 0:
+                        updateUser(userData);
+                        break;
+                    case -1:
+                        Swal.fire({
+                            icon: 'warning',
+                            title: '유저 식별 불가능',
+                            text: '수정 하고자 하는 유저가 존재하지 않습니다.'
+                        }).then(function() {
                             window.location.reload();
-                            break;
-                        case -2:
-                            alert("유저네임과 이메일은 중복 되거나 빈 칸 일 수 없습니다.");
+                        });
+                        break;
+                    case -2:
+                        Swal.fire({
+                            icon: 'warning',
+                            title: '수정 오류',
+                            text: '유저네임과 이메일은 중복 되거나 빈 칸 일 수 없습니다.'
+                        }).then(function() {
                             window.location.reload();
-                            break;
-                        case -3:
-                            alert("비밀번호가 일치하지 않습니다. 비밀번호를 다시 입력해주세요");
+                        });
+                        break;
+                    case -3:
+                        Swal.fire({
+                            icon: 'warning',
+                            title: '비밀번호 불일치',
+                            text: '비밀번호를 다시 입력해주세요.'
+                        }).then(function() {
                             window.location.reload();
-                            break;
-                        default:
-                            alert("오류 발생: " + response.message);
+                        });
+                        break;
+                    default:
+                        Swal.fire({
+                            icon: 'error',
+                            title: '수정 오류',
+                            text: '오류 발생: ' + response.message
+                        }).then(function() {
                             window.location.reload();
-                    }
+                        });
+                }
             },
             error: function(xhr, status, error) {
-                alert("비밀번호 검증 실패: " + xhr.responseText);
+                Swal.fire({
+                    icon: 'error',
+                    title: '수정 오류',
+                    text: '비밀번호 검증 중 에러'
+                });
             }
         });
     }
@@ -100,21 +178,40 @@
             data: JSON.stringify(userData),
             success: function(response) {
                 switch(response.code) {
-                   case 0:
-                       alert("수정 성공");
-                       window.location.href = "/user/detail";
-                       break;
-                   case -2:
-                       alert(response.message);
-                       window.location.reload();
-                       break;
-                   default:
-                       alert("수정 중 오류 발생: " + response.message);
-                       window.location.reload();
-               }
+                    case 0:
+                        Swal.fire({
+                            icon: 'success',
+                            title: '수정 성공',
+                            text: '수정이 성공적으로 완료되었습니다.'
+                        }).then(function() {
+                            window.location.href = "/user/detail";
+                        });
+                        break;
+                    case -2:
+                        Swal.fire({
+                            icon: 'warning',
+                            title: '수정 오류',
+                            text: "유저이름과 이메일은 중복될 수 없습니다."
+                        }).then(function() {
+                            window.location.reload();
+                        });
+                        break;
+                    default:
+                        Swal.fire({
+                            icon: 'error',
+                            title: '수정 오류',
+                            text: '수정 중 오류 발생: ' + response.message
+                        }).then(function() {
+                            window.location.reload();
+                        });
+                }
             },
             error: function(xhr, status, error) {
-                alert("수정 실패: " + xhr.responseText);
+                Swal.fire({
+                    icon: 'error',
+                    title: '수정 오류',
+                    text: '수정 실패'
+                });
             }
         });
     }
@@ -125,13 +222,10 @@
         <div class="form-container">
             <form id="updateForm">
                 <input type="hidden" name="id" id="id" value="${user.id}"/>
+                <input type="hidden" name="username" id="username" value="${user.username}"/>
                 <div class="form-group">
                     <label for="name">이름:</label>
                     <input type="text" name="name" id="name" value="${user.name}" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="username">닉네임:</label>
-                    <input type="text" name="username" id="username" value="${user.username}" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="email">메일:</label>

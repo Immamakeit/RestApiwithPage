@@ -13,4 +13,6 @@ public interface UserMapper {
 
     int deleteUser(UserVo userVo);
 
+    boolean isEmailDuplicate(UserVo userVo);
+
 }

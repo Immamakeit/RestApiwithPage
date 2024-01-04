@@ -99,13 +99,32 @@ public class UserController {
     public CommonRespDto checkPassword(@RequestBody CheckPasswordReqDto checkPasswordReqDto) {
         CommonRespDto commonRespDto = new CommonRespDto();
         try {
-            if (!userService.isPasswordValid(checkPasswordReqDto.getUsername(), checkPasswordReqDto.getPassword())) {
+            UserVo userVo = new UserVo(checkPasswordReqDto);
+            if (!userService.isPasswordValid(userVo)) {
                 commonRespDto.setCode(ResultCode.INVALID_PASSWORD.value());
                 commonRespDto.setMessage("Password is Invalid");
             }
             return commonRespDto;
         } catch (Exception e) {
             log.error("Error at UserController.checkPassword", e);
+            commonRespDto.setCode(ResultCode.UNKNOWN_EXCEPTION.value());
+            commonRespDto.setMessage("Error while checking Password");
+            return commonRespDto;
+        }
+    }
+
+    @PostMapping("/check/duplicate/email")
+    public CommonRespDto checkIfEmailExists(@RequestBody CheckDuplicateEmailReqDto checkDuplicateEmailReqDto) {
+        CommonRespDto commonRespDto = new CommonRespDto();
+        try {
+            UserVo userVo = new UserVo(checkDuplicateEmailReqDto);
+            if (userService.isEmailDuplicate(userVo)) {
+                commonRespDto.setCode(ResultCode.VIOLATED_INTEGRITY_DB.value());
+                commonRespDto.setMessage("Email is duplicated");
+            }
+            return commonRespDto;
+        } catch (Exception e) {
+            log.error("Error at checkIfEmailExists", e);
             commonRespDto.setCode(ResultCode.UNKNOWN_EXCEPTION.value());
             commonRespDto.setMessage("Error while checking Password");
             return commonRespDto;
