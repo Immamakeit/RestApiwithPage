@@ -13,8 +13,6 @@
 <style>
     body {
         background-color: #f5f5f5;
-        padding-top: 50px;
-        padding-bottom: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -172,7 +170,7 @@
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="비밀번호를 한번 더 입력하세요!" class="form-control" />
             </div>
             <div class="form-group text-center">
-                <button type="button" id="deleteBtn" class="btn btn-danger">탈퇴</button>
+                <button id="deleteBtn" class="btn btn-danger">탈퇴</button>
             </div>
         </form>
     </div>

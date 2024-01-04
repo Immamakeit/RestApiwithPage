@@ -41,11 +41,6 @@
         border-radius: 4px;
         cursor: pointer;
     }
-    .error-message {
-        color: red;
-        margin-top: 10px;
-        text-align: left;
-    }
     .form-group label {
         text-align: left;
         display: block;
@@ -252,8 +247,7 @@
                     <label for="password">비밀번호:</label>
                     <input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요!" class="form-control" required>
                 </div>
-                <button type="button" id="updateBtn" class="btn btn-primary">수정</button>
-                <div class="error-message" id="error-message"></div>
+                <button id="updateBtn" class="btn btn-primary">수정</button>
             </form>
         </div>
     </div>

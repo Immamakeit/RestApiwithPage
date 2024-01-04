@@ -142,7 +142,7 @@
                             <td><input type="text" name="company" id="company" class="form-control"/></td>
                         </tr>
                     </table>
-                    <button type="button" id="registerBtn" class="btn btn-primary">등록</button>
+                    <button id="registerBtn" class="btn btn-primary">등록</button>
                 </div>
             </form>
 </body>
