@@ -6,7 +6,6 @@ public enum ResultCode {
     DATA_NOT_FOUND(-1),
     VIOLATED_INTEGRITY_DB(-2),
     INVALID_PASSWORD(-3),
-    NO_SUCH_USER(-4),
     UNKNOWN_EXCEPTION(-99);
 
     private final int value;

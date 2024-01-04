@@ -19,7 +19,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/user/info")
+    @GetMapping("/user/detail")
     public GetUserRespDto getUserInfo(@RequestParam String username) {
         GetUserRespDto getUserRespDto = new GetUserRespDto();
         try {
