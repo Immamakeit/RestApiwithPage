@@ -7,8 +7,8 @@
     <title>welcome</title>
 </head>
 <body>
-    <a href="/user/login">로그인</a>
-    <a href="/user/register">회원가입</a>
+    <a href="/signin">로그인</a>
+    <a href="/signup">회원가입</a>
 
 </body>
 </html>

@@ -32,25 +32,6 @@ public class UserController {
             getUserRespDto.setMessage("Error occured while getting detail of user");
             return getUserRespDto;
         }
-
-    }
-
-    @PostMapping("/user/check/password")
-    public CommonRespDto checkPassword(@RequestBody CheckPasswordReqDto checkPasswordReqDto) {
-        CommonRespDto commonRespDto = new CommonRespDto();
-        try {
-            //UserVo userVo = new UserVo(checkPasswordReqDto);
-            if (!userService.isPasswordValid(checkPasswordReqDto.getUsername(), checkPasswordReqDto.getPassword())) {
-                commonRespDto.setCode(ResultCode.INVALID_PASSWORD.value());
-                commonRespDto.setMessage("Password is Invalid");
-            }
-            return commonRespDto;
-        } catch (Exception e) {
-            log.error("Error at UserController.checkPassword", e);
-            commonRespDto.setCode(ResultCode.UNKNOWN_EXCEPTION.value());
-            commonRespDto.setMessage("Error while checking Password");
-            return commonRespDto;
-        }
     }
 
     @PostMapping("/user/register")
@@ -110,6 +91,23 @@ public class UserController {
             log.error("Error at UserController.deleteUser", e);
             commonRespDto.setCode(ResultCode.UNKNOWN_EXCEPTION.value());
             commonRespDto.setMessage("Error occured while deleting user");
+            return commonRespDto;
+        }
+    }
+
+    @PostMapping("/user/check/password")
+    public CommonRespDto checkPassword(@RequestBody CheckPasswordReqDto checkPasswordReqDto) {
+        CommonRespDto commonRespDto = new CommonRespDto();
+        try {
+            if (!userService.isPasswordValid(checkPasswordReqDto.getUsername(), checkPasswordReqDto.getPassword())) {
+                commonRespDto.setCode(ResultCode.INVALID_PASSWORD.value());
+                commonRespDto.setMessage("Password is Invalid");
+            }
+            return commonRespDto;
+        } catch (Exception e) {
+            log.error("Error at UserController.checkPassword", e);
+            commonRespDto.setCode(ResultCode.UNKNOWN_EXCEPTION.value());
+            commonRespDto.setMessage("Error while checking Password");
             return commonRespDto;
         }
     }

@@ -20,27 +20,24 @@ public class SecurityConfig {
     private CustomUserDetailService customUserDetailService;
 
     @Autowired
-    private CustomLoginFailure customLoginFailure;
-
-    @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         HttpSessionRequestCache requestCache = new HttpSessionRequestCache();
         requestCache.setMatchingRequestParameterName(null);
+
         http
                 .requestCache((cache) -> cache
                         .requestCache(requestCache))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/user/detail", "/user/delete", "/user/update").authenticated()
+                        .requestMatchers("/user/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .formLogin(form -> form
-                        .loginPage("/user/login")
+                        .loginPage("/signin")
                         .loginProcessingUrl("/login")
-                        .failureHandler(customLoginFailure)
                         .defaultSuccessUrl("/user/detail")
                         .permitAll()
                 )
