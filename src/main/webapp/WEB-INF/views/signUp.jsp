@@ -66,7 +66,7 @@
                                 text: '로그인 해주세요!',
                                 confirmButtonText: '확인'
                             }).then(function() {
-                                window.location.href = "/user/login";
+                                window.location.href = "/signin";
                             });
                            break;
                        case -2:
