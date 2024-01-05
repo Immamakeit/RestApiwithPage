@@ -16,11 +16,11 @@ public class ViewController {
     @Autowired
     private UserService userService;
 
-    private UserVo getCurrentUser() {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = auth.getName();
-        return userService.getUserInfo(username);
-    }
+//    private UserVo getCurrentUser() {
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        String username = auth.getName();
+//        return userService.getUserInfo(username);
+//    }
 
     @GetMapping("/")
     public String usersWelcome() {
@@ -28,7 +28,7 @@ public class ViewController {
     }
 
     @GetMapping("/signin")
-    public String signIn(HttpServletRequest request, Model model) {
+    public String signIn() {
         return "views/signIn";
     }
 
@@ -42,25 +42,25 @@ public class ViewController {
         return "errors/customError";
     }
 
-    @GetMapping("/user/detail")
-    public String userDetail(Model model) {
-        UserVo user = getCurrentUser();
-        model.addAttribute("user", user);
-        return "views/userDetail";
-    }
-
-    @GetMapping("/user/update")
-    public String userUpdate(Model model) {
-        UserVo user = getCurrentUser();
-        model.addAttribute("user", user);
-        return "views/userUpdate";
-    }
-
-    @GetMapping("/user/delete")
-    public String userDelete(Model model) {
-        UserVo user = getCurrentUser();
-        model.addAttribute("user", user);
-        return "views/userDelete";
-    }
+//    @GetMapping("/user/detail")
+//    public String userDetail(Model model) {
+//        UserVo user = getCurrentUser();
+//        model.addAttribute("user", user);
+//        return "views/userDetail";
+//    }
+//
+//    @GetMapping("/user/update")
+//    public String userUpdate(Model model) {
+//        UserVo user = getCurrentUser();
+//        model.addAttribute("user", user);
+//        return "views/userUpdate";
+//    }
+//
+//    @GetMapping("/user/delete")
+//    public String userDelete(Model model) {
+//        UserVo user = getCurrentUser();
+//        model.addAttribute("user", user);
+//        return "views/userDelete";
+//    }
 
 }

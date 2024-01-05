@@ -69,3 +69,295 @@
 24-01-05 12:40:29.938 [http-nio-8080-exec-1] INFO  [[/]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 24-01-05 12:40:29.938 [http-nio-8080-exec-1] INFO  [DispatcherServlet:532] - Initializing Servlet 'dispatcherServlet'
 24-01-05 12:40:29.939 [http-nio-8080-exec-1] INFO  [DispatcherServlet:554] - Completed initialization in 1 ms
+24-01-05 15:17:24.353 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 34792 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-05 15:17:24.358 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-05 15:17:25.140 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-05 15:17:25.147 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-05 15:17:25.149 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-05 15:17:25.150 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-05 15:17:25.290 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-05 15:17:25.296 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-05 15:17:25.296 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 906 ms
+24-01-05 15:17:25.667 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@36224f93, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ee5632d, org.springframework.security.web.context.SecurityContextHolderFilter@24a0c58b, org.springframework.security.web.header.HeaderWriterFilter@8e99809, org.springframework.web.filter.CorsFilter@52a7928a, org.springframework.security.web.authentication.logout.LogoutFilter@5a4d4f9c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2478b629, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f3c0399, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@183fc2fa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@563ccd31, org.springframework.security.web.access.ExceptionTranslationFilter@6424e613, org.springframework.security.web.access.intercept.AuthorizationFilter@2c6c302f]
+24-01-05 15:17:25.777 [main] INFO  [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+24-01-05 15:17:25.799 [main] INFO  [TomcatWebServer:241] - Tomcat started on port 8080 (http) with context path ''
+24-01-05 15:17:25.805 [main] INFO  [User2Application:56] - Started User2Application in 1.807 seconds (process running for 2.053)
+24-01-05 15:17:27.772 [http-nio-8080-exec-1] INFO  [[/]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-01-05 15:17:27.773 [http-nio-8080-exec-1] INFO  [DispatcherServlet:532] - Initializing Servlet 'dispatcherServlet'
+24-01-05 15:17:27.773 [http-nio-8080-exec-1] INFO  [DispatcherServlet:554] - Completed initialization in 0 ms
+24-01-05 15:17:35.291 [http-nio-8080-exec-3] INFO  [HikariDataSource:110] - HikariPool-1 - Starting...
+24-01-05 15:17:35.367 [http-nio-8080-exec-3] INFO  [HikariPool:565] - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@7b8afe3b
+24-01-05 15:17:35.369 [http-nio-8080-exec-3] INFO  [HikariDataSource:123] - HikariPool-1 - Start completed.
+24-01-05 15:22:30.035 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 35516 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-05 15:22:30.037 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-05 15:22:30.816 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-05 15:22:30.823 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-05 15:22:30.825 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-05 15:22:30.825 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-05 15:22:30.970 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-05 15:22:30.975 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-05 15:22:30.976 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 910 ms
+24-01-05 15:22:31.014 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'passwordEncoder': No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+24-01-05 15:22:31.016 [main] INFO  [StandardService:173] - Stopping service [Tomcat]
+24-01-05 15:22:31.026 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-05 15:22:31.041 [main] ERROR [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field passwordEncoder in com.gyuha.user2.config.security.SecurityConfig required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
+24-01-05 15:36:04.316 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 16188 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-05 15:36:04.318 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-05 15:36:05.124 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-05 15:36:05.131 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-05 15:36:05.133 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-05 15:36:05.133 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-05 15:36:05.276 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-05 15:36:05.281 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-05 15:36:05.282 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 935 ms
+24-01-05 15:36:05.612 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5600a5da, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@551be9f6, org.springframework.security.web.context.SecurityContextHolderFilter@35145874, org.springframework.security.web.header.HeaderWriterFilter@5b733ef7, org.springframework.web.filter.CorsFilter@269222ae, org.springframework.security.web.authentication.logout.LogoutFilter@7f8a9454, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@33d7765a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11df2829, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18e4674d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@13250132, org.springframework.security.web.access.ExceptionTranslationFilter@491f8831, org.springframework.security.web.access.intercept.AuthorizationFilter@58aa1d72]
+24-01-05 15:36:05.631 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationManager' defined in class path resource [com/gyuha/user2/config/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+24-01-05 15:36:05.634 [main] INFO  [StandardService:173] - Stopping service [Tomcat]
+24-01-05 15:36:05.643 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-05 15:36:05.657 [main] ERROR [SpringApplication:855] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationManager' defined in class path resource [com/gyuha/user2/config/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:643)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.gyuha.user2.User2Application.main(User2Application.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: org.springframework.security.config.annotation.AlreadyBuiltException: This object has already been built
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:41)
+	at com.gyuha.user2.config.security.SecurityConfig.authenticationManager(SecurityConfig.java:58)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$0.CGLIB$authenticationManager$1(<generated>)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$0.authenticationManager(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 20 common frames omitted
+24-01-05 15:38:29.942 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 32160 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-05 15:38:29.945 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-05 15:38:30.761 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-05 15:38:30.769 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-05 15:38:30.771 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-05 15:38:30.771 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-05 15:38:30.921 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-05 15:38:30.927 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-05 15:38:30.928 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 953 ms
+24-01-05 15:38:31.264 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3b4086c1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58aa1d72, org.springframework.security.web.context.SecurityContextHolderFilter@29962b2f, org.springframework.security.web.header.HeaderWriterFilter@525647f3, org.springframework.web.filter.CorsFilter@33d7765a, org.springframework.security.web.authentication.logout.LogoutFilter@7ab2a07e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@361cd35c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@691541bc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b733ef7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69ed5ea2, org.springframework.security.web.access.ExceptionTranslationFilter@3a3b10f4, org.springframework.security.web.access.intercept.AuthorizationFilter@3b435211]
+24-01-05 15:38:31.283 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationManager' defined in class path resource [com/gyuha/user2/config/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+24-01-05 15:38:31.286 [main] INFO  [StandardService:173] - Stopping service [Tomcat]
+24-01-05 15:38:31.295 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-05 15:38:31.308 [main] ERROR [SpringApplication:855] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationManager' defined in class path resource [com/gyuha/user2/config/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:643)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.gyuha.user2.User2Application.main(User2Application.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: org.springframework.security.config.annotation.AlreadyBuiltException: This object has already been built
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:41)
+	at com.gyuha.user2.config.security.SecurityConfig.authenticationManager(SecurityConfig.java:52)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$0.CGLIB$authenticationManager$1(<generated>)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$0.authenticationManager(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 20 common frames omitted
+24-01-05 16:35:33.046 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 5344 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-05 16:35:33.048 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-05 16:35:33.807 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-05 16:35:33.814 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-05 16:35:33.816 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-05 16:35:33.816 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-05 16:35:33.956 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-05 16:35:33.962 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-05 16:35:33.962 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 882 ms
+24-01-05 16:35:34.290 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5600a5da, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@551be9f6, org.springframework.security.web.context.SecurityContextHolderFilter@35145874, org.springframework.security.web.header.HeaderWriterFilter@5b733ef7, org.springframework.web.filter.CorsFilter@269222ae, org.springframework.security.web.authentication.logout.LogoutFilter@7f8a9454, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@33d7765a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11df2829, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18e4674d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@13250132, org.springframework.security.web.access.ExceptionTranslationFilter@491f8831, org.springframework.security.web.access.intercept.AuthorizationFilter@58aa1d72]
+24-01-05 16:35:34.311 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationManager' defined in class path resource [com/gyuha/user2/config/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+24-01-05 16:35:34.313 [main] INFO  [StandardService:173] - Stopping service [Tomcat]
+24-01-05 16:35:34.322 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-05 16:35:34.336 [main] ERROR [SpringApplication:855] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationManager' defined in class path resource [com/gyuha/user2/config/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:643)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.gyuha.user2.User2Application.main(User2Application.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: org.springframework.security.config.annotation.AlreadyBuiltException: This object has already been built
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:41)
+	at com.gyuha.user2.config.security.SecurityConfig.authenticationManager(SecurityConfig.java:50)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$0.CGLIB$authenticationManager$2(<generated>)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$0.authenticationManager(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 20 common frames omitted
+24-01-05 16:49:43.801 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 12416 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-05 16:49:43.807 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-05 16:49:44.569 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-05 16:49:44.569 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-05 16:49:44.569 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-05 16:49:44.569 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-05 16:49:44.722 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-05 16:49:44.727 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-05 16:49:44.728 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 890 ms
+24-01-05 16:49:45.062 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13250132, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40d848f9, org.springframework.security.web.context.SecurityContextHolderFilter@18e4674d, org.springframework.security.web.header.HeaderWriterFilter@35145874, org.springframework.web.filter.CorsFilter@4a864d4d, org.springframework.security.web.authentication.logout.LogoutFilter@6c075e9d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5eed6dfb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6af609ea, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@280fafd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d3691e1, org.springframework.security.web.access.ExceptionTranslationFilter@43a4a9e5, org.springframework.security.web.access.intercept.AuthorizationFilter@56a4abd0]
+24-01-05 16:49:45.082 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationManager' defined in class path resource [com/gyuha/user2/config/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+24-01-05 16:49:45.084 [main] INFO  [StandardService:173] - Stopping service [Tomcat]
+24-01-05 16:49:45.084 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-05 16:49:45.099 [main] ERROR [SpringApplication:855] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationManager' defined in class path resource [com/gyuha/user2/config/security/SecurityConfig.class]: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:643)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.gyuha.user2.User2Application.main(User2Application.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManager' threw exception with message: This object has already been built
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: org.springframework.security.config.annotation.AlreadyBuiltException: This object has already been built
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:41)
+	at com.gyuha.user2.config.security.SecurityConfig.authenticationManager(SecurityConfig.java:49)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$0.CGLIB$authenticationManager$1(<generated>)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.gyuha.user2.config.security.SecurityConfig$$SpringCGLIB$$0.authenticationManager(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 20 common frames omitted
+24-01-05 17:08:09.163 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 33204 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-05 17:08:09.165 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-05 17:08:09.913 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-05 17:08:09.921 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-05 17:08:09.922 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-05 17:08:09.923 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-05 17:08:10.064 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-05 17:08:10.070 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-05 17:08:10.070 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 876 ms
+24-01-05 17:08:10.400 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3c7279a5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2bebd114, org.springframework.security.web.context.SecurityContextHolderFilter@7b14c61, org.springframework.security.web.header.HeaderWriterFilter@679d0be8, org.springframework.web.filter.CorsFilter@b379bc6, org.springframework.security.web.authentication.logout.LogoutFilter@1f129467, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7a84788f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e599100, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b435211, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@374c40ba, org.springframework.security.web.access.ExceptionTranslationFilter@7f8a9454, org.springframework.security.web.access.intercept.AuthorizationFilter@395f52ed]
+24-01-05 17:08:10.517 [main] INFO  [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+24-01-05 17:08:10.539 [main] INFO  [TomcatWebServer:241] - Tomcat started on port 8080 (http) with context path ''
+24-01-05 17:08:10.546 [main] INFO  [User2Application:56] - Started User2Application in 1.729 seconds (process running for 1.967)
+24-01-05 17:09:20.665 [http-nio-8080-exec-2] INFO  [[/]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-01-05 17:09:20.666 [http-nio-8080-exec-2] INFO  [DispatcherServlet:532] - Initializing Servlet 'dispatcherServlet'
+24-01-05 17:09:20.667 [http-nio-8080-exec-2] INFO  [DispatcherServlet:554] - Completed initialization in 0 ms
+24-01-05 17:09:20.706 [http-nio-8080-exec-2] INFO  [HikariDataSource:110] - HikariPool-1 - Starting...
+24-01-05 17:09:20.784 [http-nio-8080-exec-2] INFO  [HikariPool:565] - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@4e4e63f
+24-01-05 17:09:20.786 [http-nio-8080-exec-2] INFO  [HikariDataSource:123] - HikariPool-1 - Start completed.
+24-01-05 17:10:03.306 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 40148 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-05 17:10:03.308 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
