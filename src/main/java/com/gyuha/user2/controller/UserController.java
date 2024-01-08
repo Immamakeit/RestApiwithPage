@@ -6,10 +6,13 @@ import com.gyuha.user2.dto.user.*;
 import com.gyuha.user2.exception.DataNotFoundException;
 import com.gyuha.user2.service.UserService;
 import com.gyuha.user2.vo.UserVo;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -133,5 +136,19 @@ public class UserController {
             return commonRespDto;
         }
     }
+
+//    SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
+//
+//    @PostMapping("/user/logout")
+//    public String performLogout(Authentication authentication, HttpServletRequest request, HttpServletResponse response) {
+//
+//
+//        if (authentication != null) {
+//            logoutHandler.doLogout(request, response, authentication);
+//        }
+//
+//        // 홈페이지나 로그인 페이지로 리디렉션
+//        return "redirect:/";
+//    }
 
 }

@@ -38,7 +38,7 @@
                 cancelButtonText: '취소'
             }).then(function(result) {
                 if (result.isConfirmed) {
-                    window.location.href = "/logout";
+                    logoutForm.submit();
                 }
             });
         });
@@ -46,6 +46,9 @@
 </script>
 </head>
 <body class="bg-light">
+    <form action="/logout" method="POST">
+        <button type="button" id="logoutBtn" class="btn btn-secondary">로그아웃</button>
+    </form>
     <div class="container mt-5">
         <h2 class="text-center user-info-title">사용자 상세 정보</h2>
         <table class="table table-bordered">
@@ -81,7 +84,6 @@
 
         <a href="/user/update" class="btn btn-primary">수정</a>
         <a href="/user/delete" class="btn btn-danger">탈퇴</a>
-        <button type="button" id="logoutBtn" class="btn btn-secondary">로그아웃</button>
     </div>
 </body>
 </html>
