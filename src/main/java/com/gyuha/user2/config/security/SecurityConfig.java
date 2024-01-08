@@ -3,8 +3,6 @@ package com.gyuha.user2.config.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -13,14 +11,17 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+
+    @Bean
+    public static PasswordEncoder delegatingPasswordEncoder() {
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    }
 
     @Bean
     public CustomAuthenticationProvider customAuthenticationProvider() {
@@ -29,7 +30,13 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+        HttpSessionRequestCache requestCache = new HttpSessionRequestCache();
+        requestCache.setMatchingRequestParameterName(null);
+
         http
+                .requestCache((cache) -> cache
+                        .requestCache(requestCache))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/user/**").authenticated()
@@ -43,27 +50,11 @@ public class SecurityConfig {
                 )
                 .logout(logout -> logout
                         .logoutSuccessUrl("/")
-                );
-
-        http.authenticationProvider(customAuthenticationProvider());
+                        .permitAll()
+                )
+                .authenticationProvider(customAuthenticationProvider());
 
         return http.build();
     }
 
-//    @Bean
-//    public PasswordEncoder createDelegatingPasswordEncoder() {
-//        String encodingId = "bcrypt";
-//        Map<String, PasswordEncoder> encoders = new HashMap<>();
-//        encoders.put(encodingId, new BCryptPasswordEncoder());
-//        return new org.springframework.security.crypto.password.DelegatingPasswordEncoder(encodingId, encoders);
-//    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    }
-
-
-
 }
-
