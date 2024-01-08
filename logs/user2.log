@@ -69,3 +69,356 @@
 24-01-05 12:40:29.938 [http-nio-8080-exec-1] INFO  [[/]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 24-01-05 12:40:29.938 [http-nio-8080-exec-1] INFO  [DispatcherServlet:532] - Initializing Servlet 'dispatcherServlet'
 24-01-05 12:40:29.939 [http-nio-8080-exec-1] INFO  [DispatcherServlet:554] - Completed initialization in 1 ms
+24-01-08 09:08:02.756 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 40928 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-08 09:08:02.758 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-08 09:08:03.531 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-08 09:08:03.539 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-08 09:08:03.541 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-08 09:08:03.541 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-08 09:08:03.718 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-08 09:08:03.724 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-08 09:08:03.725 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 938 ms
+24-01-08 09:08:03.892 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'passwordEncoder': No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+24-01-08 09:08:03.894 [main] INFO  [StandardService:173] - Stopping service [Tomcat]
+24-01-08 09:08:03.904 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-08 09:08:03.919 [main] ERROR [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field passwordEncoder in com.gyuha.user2.service.UserService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
+24-01-08 09:28:03.313 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 5308 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-08 09:28:03.319 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-08 09:28:04.122 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-08 09:28:04.129 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-08 09:28:04.131 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-08 09:28:04.131 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-08 09:28:04.278 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-08 09:28:04.284 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-08 09:28:04.285 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 935 ms
+24-01-08 09:28:04.654 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8e99809, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e62319f, org.springframework.security.web.context.SecurityContextHolderFilter@6af310c7, org.springframework.security.web.header.HeaderWriterFilter@75eaba95, org.springframework.web.filter.CorsFilter@4d354a3e, org.springframework.security.web.authentication.logout.LogoutFilter@6986f93e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a48da4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c38cd16, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ddcb0dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24a0c58b, org.springframework.security.web.access.ExceptionTranslationFilter@58b311ba, org.springframework.security.web.access.intercept.AuthorizationFilter@68631b1d]
+24-01-08 09:28:04.774 [main] INFO  [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+24-01-08 09:28:04.798 [main] INFO  [TomcatWebServer:241] - Tomcat started on port 8080 (http) with context path ''
+24-01-08 09:28:04.806 [main] INFO  [User2Application:56] - Started User2Application in 1.856 seconds (process running for 2.146)
+24-01-08 09:28:26.585 [http-nio-8080-exec-1] INFO  [[/]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-01-08 09:28:26.585 [http-nio-8080-exec-1] INFO  [DispatcherServlet:532] - Initializing Servlet 'dispatcherServlet'
+24-01-08 09:28:26.586 [http-nio-8080-exec-1] INFO  [DispatcherServlet:554] - Completed initialization in 1 ms
+24-01-08 09:28:42.169 [http-nio-8080-exec-3] INFO  [HikariDataSource:110] - HikariPool-1 - Starting...
+24-01-08 09:28:42.257 [http-nio-8080-exec-3] INFO  [HikariPool:565] - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@5e3876a0
+24-01-08 09:28:42.259 [http-nio-8080-exec-3] INFO  [HikariDataSource:123] - HikariPool-1 - Start completed.
+24-01-08 09:28:42.286 [http-nio-8080-exec-3] ERROR [[dispatcherServlet]:175] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.IllegalArgumentException: There is no PasswordEncoder mapped for the id "null"
+	at org.springframework.security.crypto.password.DelegatingPasswordEncoder$UnmappedIdPasswordEncoder.matches(DelegatingPasswordEncoder.java:289)
+	at org.springframework.security.crypto.password.DelegatingPasswordEncoder.matches(DelegatingPasswordEncoder.java:237)
+	at com.gyuha.user2.config.security.CustomAuthenticationProvider.authenticate(CustomAuthenticationProvider.java:31)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182)
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:85)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:231)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+24-01-08 09:28:42.289 [http-nio-8080-exec-3] INFO  [GlobalErrorController:30] - From GlobalErrorController, 500 Internal Server Error 
+500
+24-01-08 09:30:25.918 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 36420 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-08 09:30:25.924 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-08 09:30:26.671 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-08 09:30:26.678 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-08 09:30:26.679 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-08 09:30:26.680 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-08 09:30:26.824 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-08 09:30:26.830 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-08 09:30:26.830 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 878 ms
+24-01-08 09:30:27.180 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8e99809, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e62319f, org.springframework.security.web.context.SecurityContextHolderFilter@6af310c7, org.springframework.security.web.header.HeaderWriterFilter@75eaba95, org.springframework.web.filter.CorsFilter@4d354a3e, org.springframework.security.web.authentication.logout.LogoutFilter@6986f93e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a48da4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c38cd16, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ddcb0dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24a0c58b, org.springframework.security.web.access.ExceptionTranslationFilter@58b311ba, org.springframework.security.web.access.intercept.AuthorizationFilter@68631b1d]
+24-01-08 09:30:27.285 [main] INFO  [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+24-01-08 09:30:27.291 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+24-01-08 09:30:27.302 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-08 09:30:27.316 [main] ERROR [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+24-01-08 09:30:36.188 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 43164 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-08 09:30:36.190 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-08 09:30:36.952 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-08 09:30:36.959 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-08 09:30:36.961 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-08 09:30:36.961 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-08 09:30:37.107 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-08 09:30:37.113 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-08 09:30:37.113 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 893 ms
+24-01-08 09:30:37.463 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6424e613, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14efa279, org.springframework.security.web.context.SecurityContextHolderFilter@320be73, org.springframework.security.web.header.HeaderWriterFilter@58b311ba, org.springframework.web.filter.CorsFilter@8e99809, org.springframework.security.web.authentication.logout.LogoutFilter@b768a65, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3c7b137a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6af310c7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4aed311e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e62319f, org.springframework.security.web.access.ExceptionTranslationFilter@1a14fdf0, org.springframework.security.web.access.intercept.AuthorizationFilter@6806468e]
+24-01-08 09:30:37.568 [main] INFO  [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+24-01-08 09:30:37.574 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+24-01-08 09:30:37.585 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-08 09:30:37.598 [main] ERROR [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+24-01-08 09:31:02.355 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 40556 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-08 09:31:02.357 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-08 09:31:03.128 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-08 09:31:03.135 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-08 09:31:03.137 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-08 09:31:03.137 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-08 09:31:03.284 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-08 09:31:03.290 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-08 09:31:03.290 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 905 ms
+24-01-08 09:31:03.659 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8e99809, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e62319f, org.springframework.security.web.context.SecurityContextHolderFilter@6af310c7, org.springframework.security.web.header.HeaderWriterFilter@75eaba95, org.springframework.web.filter.CorsFilter@4d354a3e, org.springframework.security.web.authentication.logout.LogoutFilter@6986f93e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a48da4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c38cd16, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ddcb0dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24a0c58b, org.springframework.security.web.access.ExceptionTranslationFilter@58b311ba, org.springframework.security.web.access.intercept.AuthorizationFilter@68631b1d]
+24-01-08 09:31:03.767 [main] INFO  [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+24-01-08 09:31:03.773 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+24-01-08 09:31:03.785 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-08 09:31:03.798 [main] ERROR [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+24-01-08 09:31:26.197 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 18988 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-08 09:31:26.203 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-08 09:31:27.016 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-08 09:31:27.024 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-08 09:31:27.026 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-08 09:31:27.026 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-08 09:31:27.172 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-08 09:31:27.179 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-08 09:31:27.179 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 946 ms
+24-01-08 09:31:27.558 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@a0c5be, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6424e613, org.springframework.security.web.context.SecurityContextHolderFilter@75eaba95, org.springframework.security.web.header.HeaderWriterFilter@284bdeed, org.springframework.web.filter.CorsFilter@14efa279, org.springframework.security.web.authentication.logout.LogoutFilter@5287ba5f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6806468e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@435e416c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6af310c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8e99809, org.springframework.security.web.access.ExceptionTranslationFilter@49cb3881, org.springframework.security.web.access.intercept.AuthorizationFilter@3af10d0b]
+24-01-08 09:31:27.668 [main] INFO  [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+24-01-08 09:31:27.675 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+24-01-08 09:31:27.686 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-08 09:31:27.699 [main] ERROR [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+24-01-08 09:31:42.478 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 40820 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-08 09:31:42.480 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-08 09:31:43.247 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-08 09:31:43.254 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-08 09:31:43.256 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-08 09:31:43.256 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-08 09:31:43.396 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-08 09:31:43.402 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-08 09:31:43.403 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 895 ms
+24-01-08 09:31:43.764 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7a65c995, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c950b3b, org.springframework.security.web.context.SecurityContextHolderFilter@3c81cd82, org.springframework.security.web.header.HeaderWriterFilter@3af2f846, org.springframework.web.filter.CorsFilter@3af10d0b, org.springframework.security.web.authentication.logout.LogoutFilter@560271a1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4be490da, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49cb3881, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a14fdf0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6806468e, org.springframework.security.web.access.ExceptionTranslationFilter@240f350a, org.springframework.security.web.access.intercept.AuthorizationFilter@2aa14ae6]
+24-01-08 09:31:43.871 [main] INFO  [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+24-01-08 09:31:43.878 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+24-01-08 09:31:43.889 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-08 09:31:43.902 [main] ERROR [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+24-01-08 09:32:36.943 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 42904 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-08 09:32:36.945 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-08 09:32:37.749 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-08 09:32:37.756 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-08 09:32:37.758 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-08 09:32:37.758 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-08 09:32:37.902 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-08 09:32:37.908 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-08 09:32:37.908 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 935 ms
+24-01-08 09:32:38.267 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8e99809, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e62319f, org.springframework.security.web.context.SecurityContextHolderFilter@6af310c7, org.springframework.security.web.header.HeaderWriterFilter@75eaba95, org.springframework.web.filter.CorsFilter@4d354a3e, org.springframework.security.web.authentication.logout.LogoutFilter@6986f93e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a48da4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c38cd16, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ddcb0dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24a0c58b, org.springframework.security.web.access.ExceptionTranslationFilter@58b311ba, org.springframework.security.web.access.intercept.AuthorizationFilter@68631b1d]
+24-01-08 09:32:38.373 [main] INFO  [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+24-01-08 09:32:38.380 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+24-01-08 09:32:38.391 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-08 09:32:38.404 [main] ERROR [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+24-01-08 09:32:51.344 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 42472 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-08 09:32:51.346 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-08 09:32:52.136 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-08 09:32:52.144 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-08 09:32:52.146 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-08 09:32:52.147 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-08 09:32:52.296 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-08 09:32:52.302 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-08 09:32:52.302 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 927 ms
+24-01-08 09:32:52.672 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6424e613, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14efa279, org.springframework.security.web.context.SecurityContextHolderFilter@320be73, org.springframework.security.web.header.HeaderWriterFilter@58b311ba, org.springframework.web.filter.CorsFilter@8e99809, org.springframework.security.web.authentication.logout.LogoutFilter@b768a65, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3c7b137a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6af310c7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4aed311e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e62319f, org.springframework.security.web.access.ExceptionTranslationFilter@1a14fdf0, org.springframework.security.web.access.intercept.AuthorizationFilter@6806468e]
+24-01-08 09:32:52.787 [main] INFO  [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+24-01-08 09:32:52.794 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+24-01-08 09:32:52.806 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-08 09:32:52.820 [main] ERROR [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+24-01-08 09:33:19.506 [main] INFO  [User2Application:50] - Starting User2Application using Java 17.0.9 with PID 4784 (C:\user2\build\classes\java\main started by ghkim in C:\user2)
+24-01-08 09:33:19.508 [main] INFO  [User2Application:662] - No active profile set, falling back to 1 default profile: "default"
+24-01-08 09:33:20.270 [main] INFO  [TomcatWebServer:109] - Tomcat initialized with port 8080 (http)
+24-01-08 09:33:20.277 [main] INFO  [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+24-01-08 09:33:20.279 [main] INFO  [StandardService:173] - Starting service [Tomcat]
+24-01-08 09:33:20.279 [main] INFO  [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/10.1.17]
+24-01-08 09:33:20.424 [main] INFO  [TldScanner:173] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-01-08 09:33:20.430 [main] INFO  [[/]:173] - Initializing Spring embedded WebApplicationContext
+24-01-08 09:33:20.430 [main] INFO  [ServletWebServerApplicationContext:296] - Root WebApplicationContext: initialization completed in 893 ms
+24-01-08 09:33:20.788 [main] INFO  [DefaultSecurityFilterChain:54] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8e99809, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e62319f, org.springframework.security.web.context.SecurityContextHolderFilter@6af310c7, org.springframework.security.web.header.HeaderWriterFilter@75eaba95, org.springframework.web.filter.CorsFilter@4d354a3e, org.springframework.security.web.authentication.logout.LogoutFilter@6986f93e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a48da4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c38cd16, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ddcb0dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24a0c58b, org.springframework.security.web.access.ExceptionTranslationFilter@58b311ba, org.springframework.security.web.access.intercept.AuthorizationFilter@68631b1d]
+24-01-08 09:33:20.897 [main] INFO  [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+24-01-08 09:33:20.904 [main] WARN  [AnnotationConfigServletWebServerApplicationContext:633] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+24-01-08 09:33:20.915 [main] INFO  [ConditionEvaluationReportLogger:82] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+24-01-08 09:33:20.928 [main] ERROR [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
