@@ -41,6 +41,20 @@
         $("#registerBtn").click(function() {
             event.preventDefault();
 
+            var password = $("#password").val();
+            var confirmPassword = $("#confirmPassword").val();
+
+             if (password !== confirmPassword) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: '비밀번호 / 비밀번호 확인 불일치',
+                    text: '비밀번호 / 비밀번호 확인란을 확인해주세요.'
+                });
+                $("#password").val("");
+                $("#confirmPassword").val("");
+                return;
+            }
+
             var userData = {
                 name: $("#name").val(),
                 username: $("#username").val(),
@@ -105,6 +119,7 @@
 </head>
 <body>
    <form id="registerForm">
+       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <div>
                     <table>
                         <tr>
@@ -119,6 +134,10 @@
                             <th>비밀번호</th>
                             <td><input type="password" name="password" id="password" class="form-control" required/></td>
                         </tr>
+                            <tr>
+                                <th>비밀번호 확인</th>
+                                <td><input type="password" name="confirmPassword" id="confirmPassword" placeholder="한번 더 입력하세요!" class="form-control" /></td>
+                            </tr>
                         <tr>
                             <th>메일</th>
                             <td><input type="text" name="email" id="email" class="form-control" placeholder="ex) example@iotree.com" required/></td>

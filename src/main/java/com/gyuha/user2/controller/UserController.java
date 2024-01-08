@@ -6,13 +6,9 @@ import com.gyuha.user2.dto.user.*;
 import com.gyuha.user2.exception.DataNotFoundException;
 import com.gyuha.user2.service.UserService;
 import com.gyuha.user2.vo.UserVo;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -24,21 +20,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
-    @GetMapping("/user/detail")
-    public GetUserRespDto getUserInfo(@RequestParam String username) {
-        GetUserRespDto getUserRespDto = new GetUserRespDto();
-        try {
-            UserVo userDetails = userService.getUserInfo(username);
-            getUserRespDto.setUserDetail(userDetails);
-            return getUserRespDto;
-        } catch (Exception e) {
-            log.error("Error at UserController.getUserInfo", e);
-            getUserRespDto.setCode(ResultCode.UNKNOWN_EXCEPTION.value());
-            getUserRespDto.setMessage("Error occured while getting detail of user");
-            return getUserRespDto;
-        }
-    }
 
     @PostMapping("/user/register")
     public CommonRespDto registerUser(@RequestBody CreateUserReqDto createUserReqDto) {
@@ -136,19 +117,5 @@ public class UserController {
             return commonRespDto;
         }
     }
-
-//    SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
-//
-//    @PostMapping("/user/logout")
-//    public String performLogout(Authentication authentication, HttpServletRequest request, HttpServletResponse response) {
-//
-//
-//        if (authentication != null) {
-//            logoutHandler.doLogout(request, response, authentication);
-//        }
-//
-//        // 홈페이지나 로그인 페이지로 리디렉션
-//        return "redirect:/";
-//    }
 
 }

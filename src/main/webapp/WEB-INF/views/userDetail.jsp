@@ -25,10 +25,21 @@
         font-weight: bold;
         margin-bottom: 20px;
     }
+    .logout-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+    }
+
+    #logoutBtn {
+        float: right;
+    }
 </style>
 <script>
     $(document).ready(function() {
         $("#logoutBtn").click(function() {
+            event.preventDefault();
+
             Swal.fire({
                 title: '로그아웃',
                 text: '정말 로그아웃 하시겠습니까?',
@@ -46,9 +57,12 @@
 </script>
 </head>
 <body class="bg-light">
-    <form action="/logout" method="POST">
-        <button type="button" id="logoutBtn" class="btn btn-secondary">로그아웃</button>
-    </form>
+    <div class="logout-container">
+        <form id="logoutForm" action="/logout" method="POST">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <button type="button" id="logoutBtn" class="btn btn-secondary">로그아웃</button>
+        </form>
+    </div>
     <div class="container mt-5">
         <h2 class="text-center user-info-title">사용자 상세 정보</h2>
         <table class="table table-bordered">

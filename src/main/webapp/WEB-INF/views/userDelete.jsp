@@ -32,11 +32,9 @@
 </style>
 <script>
     $(document).ready(function() {
-        $("#deleteBtn").click(function() {
+         $("#deleteBtn").click(function() {
             event.preventDefault();
-
             var password = $("#password").val();
-            var confirmPassword = $("#confirmPassword").val();
 
             Swal.fire({
                 title: '정말 탈퇴하시겠습니까?',
@@ -47,27 +45,15 @@
                 cancelButtonText: '아니오'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    if (password !== confirmPassword) {
-                        Swal.fire({
-                            icon: 'warning',
-                            title: '비밀번호 / 비밀번호 확인 불일치',
-                            text: '비밀번호 / 비밀번호 확인란을 확인해주세요.'
-                        });
-                        $("#password").val("");
-                        $("#confirmPassword").val("");
-                        return;
-                    }
-
                     var userData = {
                         id: $("#id").val(),
                         username: $("#username").val(),
-                        password: $("#password").val(),
+                        password: password,
                     };
                     checkPasswordAndDelete(userData);
                 }
             });
         });
-    });
 
     function checkPasswordAndDelete(userData) {
         $.ajax({
@@ -159,15 +145,12 @@
 <body>
     <div class="col-md-6">
         <form id="deleteForm">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="hidden" name="id" id="id" value="${user.id}" />
             <input type="hidden" name="username" id="username" value="${user.username}" />
             <div class="form-group">
                 <label for="password">비밀번호:</label>
                 <input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요!" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label for="confirmPassword">비밀번호 확인:</label>
-                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="비밀번호를 한번 더 입력하세요!" class="form-control" />
             </div>
             <div class="form-group text-center">
                 <button id="deleteBtn" class="btn btn-danger">탈퇴</button>

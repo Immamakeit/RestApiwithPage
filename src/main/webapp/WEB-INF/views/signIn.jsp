@@ -45,6 +45,7 @@
 </head>
 <body>
    <form method="post" action="/login" class="bg-dark p-4 rounded">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <h3 class="mb-3" style="color: gray;">로그인</h3>
     <input type="text" name="username" id="username" class="form-control" placeholder="사용자 이름"/><br>
     <input type="password" name="password" id="password" class="form-control" placeholder="비밀번호"/><br>

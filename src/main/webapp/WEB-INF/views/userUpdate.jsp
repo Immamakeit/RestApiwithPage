@@ -50,6 +50,8 @@
 <script>
    $(document).ready(function() {
        const originalEmail = $("#email").val();
+       const token = $("input[name='_csrf']").val(); // CSRF 토큰 값 추출
+       const header = "X-CSRF-TOKEN"; // CSRF 헤더 이름
 
        $("#updateBtn").click(function(event) {
            event.preventDefault();
@@ -217,6 +219,7 @@
     <div class="container">
         <div class="form-container">
             <form id="updateForm">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <input type="hidden" name="id" id="id" value="${user.id}"/>
                 <input type="hidden" name="username" id="username" value="${user.username}"/>
                 <div class="form-group">
