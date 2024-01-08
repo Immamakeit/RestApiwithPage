@@ -12,6 +12,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Collections;
+import java.util.Optional;
 
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
@@ -24,19 +25,31 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username = authentication.getName();
-        String password = authentication.getCredentials().toString();
+        Object rawPassword = authentication.getCredentials();
+
+        Optional.ofNullable(username).orElseThrow(
+                () -> new BadCredentialsException("No username provided")
+        );
 
         UserVo user = userMapper.getUserInfo(username);
-
-        if (user == null || !passwordEncoder.matches(password, user.getPassword())) {
-            throw new BadCredentialsException("Invalid username or password");
+        if (user == null) {
+            throw new BadCredentialsException("Username not found");
         }
 
-        return new UsernamePasswordAuthenticationToken(username, password, Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER")));
+        verifyCredentials(rawPassword, user.getPassword());
+
+        return new UsernamePasswordAuthenticationToken(username, null, Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER")));
+    }
+
+    private void verifyCredentials(Object credentials, String password) {
+        if (!passwordEncoder.matches((String)credentials, password)) {
+            throw new BadCredentialsException("Incorrect password");
+        }
     }
 
     @Override
     public boolean supports(Class<?> authentication) {
         return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);
     }
+
 }

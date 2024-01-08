@@ -6,6 +6,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +20,11 @@ public class ViewController {
     @Autowired
     private UserService userService;
 
-//    private UserVo getCurrentUser() {
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//        String username = auth.getName();
-//        return userService.getUserInfo(username);
-//    }
+    private UserVo getCurrentUser() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        return userService.getUserInfo(username);
+    }
 
     @GetMapping("/")
     public String usersWelcome() {
@@ -42,25 +46,25 @@ public class ViewController {
         return "errors/customError";
     }
 
-//    @GetMapping("/user/detail")
-//    public String userDetail(Model model) {
-//        UserVo user = getCurrentUser();
-//        model.addAttribute("user", user);
-//        return "views/userDetail";
-//    }
-//
-//    @GetMapping("/user/update")
-//    public String userUpdate(Model model) {
-//        UserVo user = getCurrentUser();
-//        model.addAttribute("user", user);
-//        return "views/userUpdate";
-//    }
-//
-//    @GetMapping("/user/delete")
-//    public String userDelete(Model model) {
-//        UserVo user = getCurrentUser();
-//        model.addAttribute("user", user);
-//        return "views/userDelete";
-//    }
+    @GetMapping("/user/detail")
+    public String userDetail(Model model) {
+        UserVo user = getCurrentUser();
+        model.addAttribute("user", user);
+        return "views/userDetail";
+    }
+
+    @GetMapping("/user/update")
+    public String userUpdate(Model model) {
+        UserVo user = getCurrentUser();
+        model.addAttribute("user", user);
+        return "views/userUpdate";
+    }
+
+    @GetMapping("/user/delete")
+    public String userDelete(Model model) {
+        UserVo user = getCurrentUser();
+        model.addAttribute("user", user);
+        return "views/userDelete";
+    }
 
 }
