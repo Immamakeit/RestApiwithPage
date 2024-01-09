@@ -166,7 +166,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-*.properties
-logback-spring.xml
-
 # End of https://www.toptal.com/developers/gitignore/api/intellij,java,windows

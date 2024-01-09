@@ -53,9 +53,7 @@ public class SecurityConfig {
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST"))
                         .logoutSuccessUrl("/signin")
                         .permitAll()
-                )
-
-                .authenticationProvider(customAuthenticationProvider());
+                );
 
         return http.build();
     }
@@ -77,9 +75,10 @@ public class SecurityConfig {
     
     //5.7.0 이상부터는 web.ignoring 으로 정적자원 통과시키는 걸 권장하지 않음.
     //기본적인 filter 거치지 않기 때문에 filterChain 내부에서 requestMatcher permitALl로 풀어주는 걸 권장하고 있다고 함
+    //static static resources common 어쩌고로 리턴해주는 것도 시도해보기 , chain 에 넣지 말고
     /* @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/css/**", "/js/**", "/images/**");
+        return (web) -> web.ignoring().requestMatchers.("/css/**", "/js/**", "/images/**");
     }*/
 
 }
