@@ -345,5 +345,6 @@ gradle-app.setting
 
 ### Custom ###
 log/
-
+*.properties
+logback-spring.xml
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,intellij,eclipse,visualstudiocode,gradle,maven,java
