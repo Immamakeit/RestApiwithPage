@@ -4,32 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<link rel="icon" href="/images/polarbear.ico" type="image/x-icon">
-<style>
-    body {
-        background-color: #f5f5f5;
-        color: #333;
-        text-align: center;
-        padding-top: 10%;
-    }
-    form {
-        width: 300px;
-        margin: auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-    }
-    input, button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-</style>
+<%@ include file="/WEB-INF/include/header.jsp" %>
+<link rel="stylesheet" href="/css/signin.css">
 <script>
     $(document).ready(function() {
         const urlParams = new URLSearchParams(window.location.search);
+
         if (urlParams.has('error')) {
             Swal.fire({
                 icon: 'error',

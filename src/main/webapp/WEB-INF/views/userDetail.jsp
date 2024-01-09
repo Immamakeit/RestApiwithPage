@@ -5,36 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>유저상세</title>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<link rel="icon" href="/images/polarbear.ico" type="image/x-icon">
-<style>
-    .table {
-        width: 80%;
-        margin: 5px;
-    }
-    .table th {
-        text-align: center;
-    }
-    .table td {
-        text-align: center;
-    }
-    .user-info-title {
-        font-size: 36px;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-    .logout-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-    }
-
-    #logoutBtn {
-        float: right;
-    }
-</style>
+<%@ include file="/WEB-INF/include/header.jsp" %>
+<link rel="stylesheet" href="/css/userDetail.css">
 <script>
     $(document).ready(function() {
         $("#logoutBtn").click(function() {

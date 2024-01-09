@@ -4,20 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>welcome</title>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-<link rel="icon" href="/images/polarbear.ico" type="image/x-icon">
-<style>
-    body {
-        background-color: #f5f5f5;
-        color: #333;
-        text-align: center;
-        padding-top: 20%;
-    }
-    a {
-        margin: 5px;
-    }
-</style>
+<%@ include file="/WEB-INF/include/header.jsp" %>
+<link rel="stylesheet" href="/css/welcome.css">
 </head>
 <body>
     <a href="/signin" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> 로그인</a>

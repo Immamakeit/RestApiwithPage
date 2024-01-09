@@ -79,8 +79,9 @@ public class UserController {
             return commonRespDto;
         }
     }
-
-    @PostMapping("/user/check/password")
+    
+    // password 체크 결과는 그냥 boolean 으로 돌려주는게 더 직관적일 듯 / 고민해보기
+    @PostMapping("/check/password")
     public CommonRespDto checkPassword(@RequestBody CheckPasswordReqDto checkPasswordReqDto) {
         CommonRespDto commonRespDto = new CommonRespDto();
         try {

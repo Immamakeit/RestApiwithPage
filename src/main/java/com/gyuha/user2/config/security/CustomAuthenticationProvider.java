@@ -38,6 +38,9 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
         verifyCredentials(rawPassword, user.getPassword());
 
+        //parameter 는 Principal
+        //key 값은 들어가야 함
+        //vo 통으로 담아도 됨, 민감한 정보는 제외하고, set null 하든 따로 만들든 판단하기.
         return new UsernamePasswordAuthenticationToken(username, null, Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER")));
     }
 
@@ -46,7 +49,8 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             throw new BadCredentialsException("Incorrect password");
         }
     }
-
+    
+    // true로 반환하는 경우 공부
     @Override
     public boolean supports(Class<?> authentication) {
         return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);
